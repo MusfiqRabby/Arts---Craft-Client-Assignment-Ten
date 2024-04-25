@@ -8,6 +8,7 @@ import ArtCraftList from "../pages/Navbar/ArtCraftList";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
 import SocialLogin from "../pages/Login/SocialLogin";
+import PrivateRoute from "../pages/Navbar/PrivateRoute/PrivateRoute";
   
   
   const routes = createBrowserRouter([
@@ -26,7 +27,9 @@ import SocialLogin from "../pages/Login/SocialLogin";
         },
         {
             path: '/addcart',
-            element: <AddCraft/>
+            element: <PrivateRoute>
+                <AddCraft/>
+            </PrivateRoute>
         },
         {
             path: '/artcraft',

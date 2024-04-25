@@ -16,14 +16,14 @@ const Register = () => {
 
     const redirect = useNavigate()
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateUserProfile} = useContext(AuthContext);
 
     const {register, handleSubmit,
         formState: { errors },
       } = useForm();
    
       const onSubmit = data => {
-       const {email, password} = data
+       const {email, password, fullName, photoURL} = data
        setRegisterError('')
           setSuccess('');
      
@@ -42,8 +42,11 @@ const Register = () => {
 
 
         createUser(email, password)
-        .then(result => {
-            console.log(result.user)
+        .then(() => {
+            updateUserProfile(fullName, photoURL)
+            .then(() => {
+                setUser({...user, displayName : fullName, photoURL})
+              })
             Swal.fire({
                 title: 'Success',
                 text: 'User Added Successfully',
