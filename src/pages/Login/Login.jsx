@@ -1,12 +1,16 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../FirbaseProvider/FirbaseProvider';
 import { useForm } from 'react-hook-form';
 import SocialLogin from './SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   
     const {loginUser} = useContext(AuthContext)
+
+    const redirect = useNavigate()
 
     const {
         register,
@@ -18,6 +22,12 @@ const Login = () => {
         loginUser(email, password)
         .then(result => {
             console.log(result.user)
+            toast.success("login successfully")
+            setTimeout(() => redirect("/"), 2000)
+        })
+        .catch(error => {
+            console.log(error)
+            toast.warning('wrong password or email, please try again')
         })
        
       }
@@ -60,7 +70,7 @@ const Login = () => {
          </div>
        </div>
      </div>
-   {/* <ToastContainer/>  */}
+   <ToastContainer/> 
    </div> 
     );
 };

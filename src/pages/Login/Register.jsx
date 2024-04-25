@@ -1,9 +1,20 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../FirbaseProvider/FirbaseProvider';
 import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
+
+    const [registerError, setRegisterError] = useState('')
+    const [success, setSuccess] = useState('')
+    const [showPassword, setShowPassword] = useState(false)
+
+
+    const redirect = useNavigate()
 
     const {createUser} = useContext(AuthContext);
 
@@ -13,9 +24,37 @@ const Register = () => {
    
       const onSubmit = data => {
        const {email, password} = data
+       setRegisterError('')
+          setSuccess('');
+     
+        if(password.length < 6){
+        toast.warning('password must be at least 6 character')
+        return;
+      }
+      else if(!/[A-Z]/.test(password)){
+        toast('Must have an Uppercase letter in the password')
+        return;
+      }
+      else if(!/[a-z]/.test(password)){
+        toast('Must have a Lowercase letter in the password')
+        return;
+      }
+
+
         createUser(email, password)
         .then(result => {
             console.log(result.user)
+            Swal.fire({
+                title: 'Success',
+                text: 'User Added Successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+           redirect("/")
+        })
+        .catch(error => {
+            toast.warning("this email already used")
+            setRegisterError(error.message)
         })
         
     }
@@ -53,18 +92,17 @@ const Register = () => {
       <label className="label">
          <span className="label-text">Password</span>
        </label>
-     
       <div className="mb-4 relative ">
       <input 
-       type='password' name="password" 
+       type={showPassword? 'text' : 'password'} name="password" 
        placeholder="password" className="input w-full input-bordered" {...register("password", { required: true })} />
          {errors.password && <span className="text-red-600">This field is required</span>}
-        {/* <span className="absolute top-4 right-2" onClick={() => setShowPassword(!showPassword)}>
+        <span className="absolute top-4 right-2" onClick={() => setShowPassword(!showPassword)}>
           {
             showPassword ? <FaEyeSlash></FaEyeSlash>:
             <FaEye></FaEye>
           }
-        </span> */}
+        </span>
       </div>
        {/* {errors.password && <span className="text-red-600">This field is required</span>} */}
        <label className="label">
@@ -76,18 +114,18 @@ const Register = () => {
      </div>
        </form>
 
-        {/* {
+        {
           registerError && <p className="text-red-700">{registerError}</p>
-        } */}
-        {/* {
+        }
+        {
           success && <p className="text-green-700 font-bold">{success}</p>
-        } */}
+       }
 
        <p>Already have an account?<Link className="text-blue-600 font-bold" to='/login'> Login </Link></p> 
     </div>
    </div>
    </div>
-   {/* <ToastContainer /> */}
+   <ToastContainer />
   </div> 
     );
 };
