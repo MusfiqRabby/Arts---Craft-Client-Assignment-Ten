@@ -1,12 +1,58 @@
+import Swal from "sweetalert2";
 
 const AddCraft = () => {
+   
+   const handleAddCraft = event => {
+    event.preventDefault();
+    const form = event.target;
+    const item = form.item.value;
+    const subcategory = form.subcategory.value;
+    const description = form.description.value;
+    const image = form.image.value;
+    const price = form.item.value;
+    const rating = form.rating.value;
+    const processing = form.processing.value;
+    const customization = form.customization.value;
+    const email = form.email.value;
+    const name = form.name.value;
+    const stock = form.stock.value;
+
+    const newUser = {item, subcategory,description,image, price,rating, processing, customization, email, name, stock }
+
+    console.log(newUser)
+
+
+    // send data to the server
+    fetch('http://localhost:5000/users', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(newUser)
+    })
+    .then(res => res.json())
+    .then(data =>{
+        console.log(data)
+        if(data.insertedId){
+            Swal.fire({
+                title: 'Success',
+                text: 'User Added Successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+        }
+    })
+
+    
+   }
+   
     return (
        <div>
          <div className="text-center mt-8">
          <h2 className="text-3xl p-4 font-extrabold rounded-t-lg bg-[#33FFBD]">Add Craft Item</h2>
          </div>
-       <div className='my-10 bg-[#F4F3F0] p-20"'>
- <form>
+       <div className='my-10 bg-[#F4F3F0] p-24"'>
+ <form onSubmit={handleAddCraft}>
    {/* form titel name and subcategory row  */}
 <div className="md:flex mb-4">
   <div className="form-control md:w-1/2">
@@ -31,7 +77,7 @@ const AddCraft = () => {
 <div className="md:flex mb-4">
   <div className="form-control md:w-1/2">
  <label className="label">
- <span className="label-text">short description</span>
+ <span className="label-text">Short description</span>
    </label>
    <label className="input-group">
   <input type="text" placeholder="short description" name="description" className="input input-bordered w-full"/>
@@ -39,7 +85,7 @@ const AddCraft = () => {
   </div>
   <div className="form-control md:w-1/2 ml-4">
  <label className="label">
- <span className="label-text">use image URL</span>
+ <span className="label-text">Use image URL</span>
    </label>
    <label className="input-group">
   <input type="text" placeholder="use image URL" name="image" className="input input-bordered w-full" />
@@ -100,7 +146,7 @@ const AddCraft = () => {
  <span className="label-text">User Name</span>
    </label>
    <label className="input-group">
-  <input type="text" placeholder="User Name" name="user" className="input input-bordered w-full" />
+  <input type="text" placeholder="User Name" name="name" className="input input-bordered w-full" />
     </label>
   </div>
   </div>
@@ -115,7 +161,7 @@ const AddCraft = () => {
     </label>
   </div>
   </div>
-  <input type="submit" value="Add Coffee" className="btn btn-block bg-[#331A15] text-white" />
+  <input type="submit" value="Add Craft" className="btn btn-block bg-[#331A15] text-white" />
   </form>
    </div>
    </div>

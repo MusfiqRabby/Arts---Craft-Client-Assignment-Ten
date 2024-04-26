@@ -19,7 +19,8 @@ import PrivateRoute from "../pages/Navbar/PrivateRoute/PrivateRoute";
       children: [
         {
           path: '/',
-          element: <Home/>
+          element: <Home/>,
+          loader: () => fetch('http://localhost:5000/users')
         },
         {
             path: '/artcraftitme',
