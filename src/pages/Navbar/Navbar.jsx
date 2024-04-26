@@ -8,7 +8,7 @@ const Navbar = () => {
 
     const navLinks = <>
     <li> <NavLink to='/'>Home</NavLink> </li>
-    <li> <NavLink to='/artcraftitme'>All Art & craft Items</NavLink> </li>
+    <li> <NavLink to='/artcraftitme'>All Art & craft</NavLink> </li>
     <li> <NavLink to='/addcart'>Add Craft</NavLink> </li>
     <li> <NavLink to='/artcraft'>Art & Craft List</NavLink> </li>
   </>
@@ -25,7 +25,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Prime-Estate</a>
+        <a className="btn btn-ghost text-xl font-poppins font-bold"> <span className='text-[#e28743] '>Art</span> & <span className='text-[#fc034e]'>Craft</span></a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 font-bold">
