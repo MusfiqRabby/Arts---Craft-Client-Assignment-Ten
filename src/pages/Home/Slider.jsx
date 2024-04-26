@@ -22,8 +22,8 @@ const Slider = () => {
       }}
       >
           <SwiperSlide>
-          <div className="slide slide1 " >
-            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/6tr3VDj/abstract-nature-painted-with-watercolor-autumn-leaves-backdrop-generated-by-ai.jpg)' }}>
+          <div className="slide slide1 xl" >
+            <div className="hero min-h-screen  " style={{ backgroundImage: 'url(https://i.ibb.co/6tr3VDj/abstract-nature-painted-with-watercolor-autumn-leaves-backdrop-generated-by-ai.jpg)' }}>
               <div className="hero-overlay bg-opacity-50"></div>
               <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">

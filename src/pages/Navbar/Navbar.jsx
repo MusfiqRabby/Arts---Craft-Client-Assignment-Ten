@@ -1,10 +1,28 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../FirbaseProvider/FirbaseProvider';
 
 const Navbar = () => {
 
   const { logOut, user } = useContext(AuthContext);
+  const [theme, setTheme] = useState('light')
+
+
+  const handleToggle = (e) =>{
+    if(e.target.checked){
+      setTheme('synthwave')
+    }
+    else{
+      setTheme('light')
+    }
+  }
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme)
+    const localTheme = localStorage.getItem('theme')
+    document.querySelector('html').setAttribute('data-theme', localTheme)
+
+  },[theme])
 
     const navLinks = <>
     <li> <NavLink to='/'>Home</NavLink> </li>
@@ -53,6 +71,15 @@ const Navbar = () => {
               <button className="btn btn-sm font-bold btn-ghost text-black hover:bg-cyan-500 ">Login</button>
             </Link>
         }
+     
+      <label className="inline-flex items-center space-x-4 cursor-pointer ">
+	  <span className="relative">
+		<input onChange={handleToggle} id="Toggle1" type="checkbox" className="hidden peer" />
+		<div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-600 peer-checked:dark:bg-violet-600"></div>
+		<div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-100"></div>
+  	</span>
+    </label>
+
       </div>
     </div>
   );

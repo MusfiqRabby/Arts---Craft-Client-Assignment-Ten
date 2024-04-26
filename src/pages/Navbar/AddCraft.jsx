@@ -2,8 +2,8 @@
 const AddCraft = () => {
     return (
        <div>
-         <div className="text-center">
-         <h2 className="text-3xl font-extrabold">Add Craft Item</h2>
+         <div className="text-center mt-8">
+         <h2 className="text-3xl p-4 font-extrabold rounded-t-lg bg-[#33FFBD]">Add Craft Item</h2>
          </div>
        <div className='my-10 bg-[#F4F3F0] p-20"'>
  <form>
