@@ -10,6 +10,7 @@ import Register from "../pages/Login/Register";
 import SocialLogin from "../pages/Login/SocialLogin";
 import PrivateRoute from "../pages/Navbar/PrivateRoute/PrivateRoute";
 import ViewDetails from "../pages/Home/userCard/ViewDetails";
+import UpdatePage from "../pages/Navbar/UpdatePage/UpdatePage";
   
   
   const routes = createBrowserRouter([
@@ -57,6 +58,13 @@ import ViewDetails from "../pages/Home/userCard/ViewDetails";
               <ViewDetails/>
             </PrivateRoute>,
             loader: () => fetch('http://localhost:5000/user')
+        },
+        {
+          path: '/updatepage/:id',
+          element: <PrivateRoute>
+            <UpdatePage/>
+          </PrivateRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/users/${params.id}`)
         }
       ],
     },
