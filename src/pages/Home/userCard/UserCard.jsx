@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 const UserCard = ({user}) => {
 
-  
-  const {_id, item, description, image, subcategory, stock} = user;
+  const {_id, item, description, image, subcategory, stock,} = user;
   
     return (
         <div data-aos="zoom-in">

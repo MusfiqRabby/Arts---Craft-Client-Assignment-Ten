@@ -35,7 +35,9 @@ import ViewDetails from "../pages/Home/userCard/ViewDetails";
         },
         {
             path: '/artcraft',
-            element: <ArtCraftList/>
+            element: <PrivateRoute>
+              <ArtCraftList/>
+            </PrivateRoute>
         },
         {
             path: '/login',
@@ -51,7 +53,9 @@ import ViewDetails from "../pages/Home/userCard/ViewDetails";
         },
         {
             path: '/viewdetails/:_id',
-            element: <ViewDetails/>,
+            element:  <PrivateRoute>
+              <ViewDetails/>
+            </PrivateRoute>,
             loader: () => fetch('http://localhost:5000/user')
         }
       ],

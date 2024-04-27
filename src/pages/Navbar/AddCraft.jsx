@@ -1,9 +1,14 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../FirbaseProvider/FirbaseProvider";
 
 const AddCraft = () => {
    
+  const {user} = useContext(AuthContext)
+  
    const handleAddCraft = event => {
     event.preventDefault();
+    console.log(user)
     const form = event.target;
     const item = form.item.value;
     const subcategory = form.subcategory.value;
@@ -13,11 +18,12 @@ const AddCraft = () => {
     const rating = form.rating.value;
     const processing = form.processing.value;
     const customization = form.customization.value;
-    const email = form.email.value;
+    const email = user.email;
     const name = form.name.value;
     const stock = form.stock.value;
 
-    const newUser = {item, subcategory,description,image, price,rating, processing, customization, email, name, stock }
+
+    const newUser = {item, subcategory,description,image, price,rating, processing, customization, email, name, stock, }
 
     console.log(newUser)
 
@@ -42,7 +48,6 @@ const AddCraft = () => {
               })
         }
     })
-
     
    }
    

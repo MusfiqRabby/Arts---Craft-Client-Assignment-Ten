@@ -3,6 +3,9 @@ import { useLoaderData, useParams } from 'react-router-dom';
 
 const ViewDetails = () => {
   
+  
+
+
     const cards = useLoaderData();
     const {_id} = useParams()
     console.log(_id, cards)

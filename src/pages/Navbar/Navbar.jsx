@@ -7,7 +7,6 @@ const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
   const [theme, setTheme] = useState('light')
 
-
   const handleToggle = (e) =>{
     if(e.target.checked){
       setTheme('synthwave')
