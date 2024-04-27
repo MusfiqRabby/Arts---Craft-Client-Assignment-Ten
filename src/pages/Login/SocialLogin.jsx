@@ -10,13 +10,12 @@ const SocialLogin = () => {
    const navigate = useNavigate()
    const location = useLocation()
    const from = location?.state || '/'
+   console.log(location);
 
     const handleSocialLogin = socialProvider  => {
         socialProvider()
         .then(result =>{
-            if(result.use){
                 navigate(from)
-            }
         })
     }
 

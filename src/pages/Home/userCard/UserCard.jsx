@@ -1,11 +1,13 @@
-import React from 'react';
+
+import { Link } from 'react-router-dom';
 
 const UserCard = ({user}) => {
+
   
-  const {item, description, image, subcategory, stock} = user;
+  const {_id, item, description, image, subcategory, stock} = user;
   
     return (
-        <div>
+        <div data-aos="zoom-in">
   <div className="card card-compact  bg-base-100 shadow-xl">
    <figure><img className='w-full h-[220px]' src={image} /></figure>
     <div className="card-body">
@@ -14,7 +16,9 @@ const UserCard = ({user}) => {
   <p className='font-semibold font-poppins text-sm'>Subcategory: <span className='text-[#E71367]'>{subcategory}</span></p>
   <p className='font-semibold font-poppins'>StockStatus: <span className='text-[#2E13E7]'>{stock}</span></p>
 <div className="card-actions justify-end">
- <button className="btn text-white bg-[#1384E7]">View Details</button>
+    <Link to={`/viewdetails/${_id}`}>
+    <button className="btn text-white bg-[#1384E7]">View Details</button>
+    </Link>
    </div>
     </div>
      </div>

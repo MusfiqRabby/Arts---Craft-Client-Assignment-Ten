@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../FirbaseProvider/FirbaseProvider';
 import { useForm } from 'react-hook-form';
 import SocialLogin from './SocialLogin';
@@ -9,6 +9,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   
     const {loginUser} = useContext(AuthContext)
+    const location = useLocation()
+   const from = location?.state || '/'
 
     const redirect = useNavigate()
 
@@ -23,7 +25,7 @@ const Login = () => {
         .then(result => {
             console.log(result.user)
             toast.success("login successfully")
-            setTimeout(() => redirect("/"), 2000)
+           redirect(from)
         })
         .catch(error => {
             console.log(error)

@@ -1,0 +1,69 @@
+import React from 'react';
+import { useLoaderData, useParams } from 'react-router-dom';
+
+const ViewDetails = () => {
+  
+    const cards = useLoaderData();
+    const {_id} = useParams()
+    console.log(_id, cards)
+  
+    return (
+        <div>
+            <h2>This is view details page</h2>
+           
+            <div className="grid grid-cols-2 gap-10">
+        <div>
+          <img src='' alt="" />
+        </div>
+        <div>
+          <h1 className="text-4xl font-bold text-[#131313] mb-2">
+            {/* {book.bookName} */}
+          </h1>
+          <p className="text-lg mb-4">
+            {/* By : {book.author} */}
+            </p>
+          <hr />
+          <p className="my-2">
+            {/* {book.category} */}
+          
+          </p>
+          <hr />
+          <h4 className="mt-4">
+            <span className="font-bold ">Review:</span>
+          </h4>
+          <div>
+          <div>
+             {/* <p className="font-medium">tag: {book.tags.map(idx => <span className="text-[#23BE0A] mr-4">#{idx}</span>)}</p> */}
+          </div>
+
+          </div>
+          <hr />
+          <div className="flex gap-8 mt-2">
+            
+            <div>
+              <p className="opacity-80 mb-1">Number of Pages:</p>
+              <p className="opacity-80 mb-1">Publisher: </p>
+              <p className="opacity-80 mb-1">Year of Publishing:</p>
+              <p className="opacity-80 mb-1">Rating:</p>
+            </div>
+            
+            {/* <div>
+              <p className="font-bold mb-1">{book.totalPages}</p>
+              <p className="font-bold mb-1">{book.publisher}</p>
+              <p className="font-bold mb-1">{book.yearOfPublishing}</p>
+              <p className="font-bold mb-1">{book.rating}</p>
+            </div> */}
+          </div>
+          <div className=" text-white mt-4">
+            <button
+            class="btn mr-4 hover:bg-[#23BE0A]">Read</button>
+            <button 
+             class="btn bg-[#50B1C9]">Wishlist</button>
+          </div>
+        </div>
+      </div>
+        </div>
+    );
+};
+
+export default ViewDetails;

@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
 import SocialLogin from "../pages/Login/SocialLogin";
 import PrivateRoute from "../pages/Navbar/PrivateRoute/PrivateRoute";
+import ViewDetails from "../pages/Home/userCard/ViewDetails";
   
   
   const routes = createBrowserRouter([
@@ -48,6 +49,11 @@ import PrivateRoute from "../pages/Navbar/PrivateRoute/PrivateRoute";
             path: '/sociallogin',
             element: <SocialLogin/>
         },
+        {
+            path: '/viewdetails/:_id',
+            element: <ViewDetails/>,
+            loader: () => fetch('http://localhost:5000/user')
+        }
       ],
     },
   ]);

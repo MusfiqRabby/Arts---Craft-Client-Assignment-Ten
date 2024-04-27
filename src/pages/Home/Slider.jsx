@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Slider = () => {
     return (
 
-    <div className="my-3" data-aos="flip-up"
+    <div className="mt-5" data-aos="flip-up"
     data-aos-easing="ease-out-cubic"
     data-aos-duration="1500">
        <Swiper 
