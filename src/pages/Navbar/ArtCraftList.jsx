@@ -21,8 +21,8 @@ const ArtCraftList = () => {
      
       {
         item?.map(p => {
-           return <div>
-    <div className="card card-side bg-base-100 shadow-xl m-20 ">
+           return <div data-aos="flip-left">
+    <div className="card card-side bg-base-200 shadow-xl  m-10 p-10 ">
   <figure>
     <img className='w-96 h-[300px] p-2 ' src={p.image} alt="Movie"/>
     </figure>
