@@ -53,11 +53,11 @@ import UpdatePage from "../pages/Navbar/UpdatePage/UpdatePage";
             element: <SocialLogin/>
         },
         {
-            path: '/viewdetails/:_id',
+            path: '/viewdetails/:id',
             element:  <PrivateRoute>
               <ViewDetails/>
             </PrivateRoute>,
-            loader: () => fetch('http://localhost:5000/user')
+           loader: ({params}) => fetch(`http://localhost:5000/users/${params.id}`)
         },
         {
           path: '/updatepage/:id',

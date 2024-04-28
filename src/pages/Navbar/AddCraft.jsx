@@ -52,7 +52,9 @@ const AddCraft = () => {
    }
    
     return (
-       <div>
+       <div data-aos="flip-right"
+       data-aos-easing="ease-out-cubic"
+       data-aos-duration="2000">
          <div className="text-center mt-8">
          <h2 className="text-3xl p-4 font-extrabold rounded-t-lg bg-[#33FFBD]">Add Craft Item</h2>
          </div>

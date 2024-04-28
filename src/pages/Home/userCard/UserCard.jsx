@@ -7,8 +7,8 @@ const UserCard = ({user}) => {
   
     return (
         <div data-aos="zoom-in">
-  <div className="card card-compact  bg-base-100 shadow-xl">
-   <figure><img className='w-full h-[220px]' src={image} /></figure>
+  <div className="card card-compact  bg-gray-100 shadow-xl">
+   <figure><img className='w-full h-[230px]' src={image} /></figure>
     <div className="card-body">
  <h2 className="card-title font-poppins">{item}</h2>
   <p className='text-lg font-bold font-poppins'> processing-time: {processing}</p>

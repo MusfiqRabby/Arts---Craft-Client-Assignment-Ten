@@ -26,8 +26,8 @@ const ArtCraftList = () => {
         item?.map(product => <ItemartandCraft
         key={product._id}
         product={product}
-        card={item}
-        setCard={setItem}
+        item={item}
+        setItem={setItem}
         ></ItemartandCraft> )
         }
 

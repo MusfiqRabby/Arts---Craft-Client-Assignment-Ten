@@ -2,7 +2,9 @@ import React from 'react';
 
 const ExtraOne = () => {
     return (
-        <div>
+        <div  data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000">
          <h2 class="text-center text-[#030712] text-4xl font-bold mt-16 underline">Best offers for you</h2>
             <div class="flex justify-center items-center gap-5 my-12">
             {/* 1st card  */}

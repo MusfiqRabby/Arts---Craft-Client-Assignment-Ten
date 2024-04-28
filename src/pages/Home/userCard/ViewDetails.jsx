@@ -1,71 +1,69 @@
-import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const ViewDetails = () => {
   
-  
+  const users = useLoaderData()
+  const {_id, item, subcategory,description,image, price,rating, processing, customization, stock, name, email } = users;
 
-
-    const cards = useLoaderData();
-    const {_id} = useParams()
-    console.log(_id, cards)
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${_id}`)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+    })
+  },[])
   
     return (
         <div>
-            <h2>This is view details page</h2>
-           
-            <div className="grid grid-cols-2 gap-10">
-        <div>
-          <img src='' alt="" />
+            <div data-aos="flip-left" data-aos-duration="1500">
+            <div className="lg:grid lg:grid-cols-2 lg:gap-10 lg:mb-5">
+        <div className='w-full h-auto '>
+          <img  src={image} alt="" />
         </div>
-        <div>
-          <h1 className="text-4xl font-bold text-[#131313] mb-2">
-            {/* {book.bookName} */}
+        <div className='font-poppins'>
+          <h1 className="text-5xl font-bold lg:mb-2 text-indigo-500 font-poppins">
+           {subcategory}
           </h1>
-          <p className="text-lg mb-4">
-            {/* By : {book.author} */}
-            </p>
           <hr />
-          <p className="my-2">
-            {/* {book.category} */}
-          
-          </p>
+          <p className="my-2"> User Name: <span className='font-bold text-lg text-[#FFC300]'>{name} </span> </p>
+          <p className="my-2"> User Email: <span className='font-bold text-lg'>{email} </span> </p>
           <hr />
           <h4 className="mt-4">
-            <span className="font-bold ">Review:</span>
+            <span className="font-bold font-poppins ">Description:</span> {description}
           </h4>
           <div>
           <div>
-             {/* <p className="font-medium">tag: {book.tags.map(idx => <span className="text-[#23BE0A] mr-4">#{idx}</span>)}</p> */}
+             <p className="font-medium lg:mb-3 font-poppins">Price: <span className='text-[#E71367] font-bold'>{price}</span></p>
           </div>
-
           </div>
           <hr />
           <div className="flex gap-8 mt-2">
-            
             <div>
-              <p className="opacity-80 mb-1">Number of Pages:</p>
-              <p className="opacity-80 mb-1">Publisher: </p>
-              <p className="opacity-80 mb-1">Year of Publishing:</p>
-              <p className="opacity-80 mb-1">Rating:</p>
+              <p className="opacity-80 mb-1">Item:</p>
+              <p className="opacity-80 mb-1">processing-time:</p>
+              <p className="opacity-80 mb-1">Customization:</p>
+              <p className="opacity-80 mb-1"> Rating:</p>
+              <p className="opacity-80 mb-1">Stock-Status:</p>
             </div>
-            
-            {/* <div>
-              <p className="font-bold mb-1">{book.totalPages}</p>
-              <p className="font-bold mb-1">{book.publisher}</p>
-              <p className="font-bold mb-1">{book.yearOfPublishing}</p>
-              <p className="font-bold mb-1">{book.rating}</p>
-            </div> */}
+            <div className='font-poppins text-[#44bcd8]'>
+              <p className="font-bold mb-1">{item}</p>
+              <p className="font-bold mb-1">{processing}</p>
+              <p className="font-bold mb-1">{customization}</p>
+              <p className="font-bold mb-1">{rating}</p>
+              <p className="font-bold mb-1">{stock}</p>
+            </div>
           </div>
-          <div className=" text-white mt-4">
-            <button
-            class="btn mr-4 hover:bg-[#23BE0A]">Read</button>
-            <button 
-             class="btn bg-[#50B1C9]">Wishlist</button>
-          </div>
+       
         </div>
       </div>
+
+
         </div>
+
+
+
+         </div>
     );
 };
 
