@@ -26,7 +26,8 @@ import UpdatePage from "../pages/Navbar/UpdatePage/UpdatePage";
         },
         {
             path: '/artcraftitme',
-            element: <ArtCraftItem/>
+            element: <ArtCraftItem/>,
+            loader: () => fetch('http://localhost:5000/artcraft')
         },
         {
             path: '/addcart',

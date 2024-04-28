@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../FirbaseProvider/FirbaseProvider';
 import ItemartandCraft from './ItemartandCraft';
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -21,9 +22,12 @@ const ArtCraftList = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Art & Craft | My Art & Craft List</title>
+            </Helmet>
 
       {
-        item?.map(product => <ItemartandCraft
+        item.map(product => <ItemartandCraft
         key={product._id}
         product={product}
         card={item}

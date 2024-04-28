@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../FirbaseProvider/FirbaseProvider";
+import { Helmet } from "react-helmet-async";
 
 const AddCraft = () => {
    
@@ -25,7 +26,7 @@ const AddCraft = () => {
 
     const newUser = {item, subcategory,description,image, price,rating, processing, customization, email, name, stock, }
 
-    console.log(newUser)
+    // console.log(newUser)
 
 
     // send data to the server
@@ -55,6 +56,9 @@ const AddCraft = () => {
        <div data-aos="flip-right"
        data-aos-easing="ease-out-cubic"
        data-aos-duration="2000">
+        <Helmet>
+          <title>Art & craft | Add Craft</title>
+        </Helmet>
          <div className="text-center mt-8">
          <h2 className="text-3xl p-4 font-extrabold rounded-t-lg bg-[#33FFBD]">Add Craft Item</h2>
          </div>

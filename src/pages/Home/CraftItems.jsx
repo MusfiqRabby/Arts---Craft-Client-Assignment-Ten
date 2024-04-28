@@ -15,7 +15,7 @@ const CraftItems = () => {
      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 my-5'>
           
         {
-            users.slice(0, 6).map(user => <UserCard
+            users.slice(0,6).map(user => <UserCard
             key={user._id}
             user={user}
             >

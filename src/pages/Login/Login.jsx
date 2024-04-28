@@ -35,14 +35,14 @@ const Login = () => {
       }
   
     return (
-        <div className="hero min-h-screen bg-base-200" data-aos="fade-right"
+        <div className="hero min-h-screen bg-gray-200" data-aos="fade-right"
         data-aos-offset="300"
         data-aos-easing="ease-in-sine">
      <div className="hero-content flex-col ">
        <div className="text-center">
          <h1 className="text-5xl font-bold">Login Now!</h1>
        </div>
-       <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+       <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-gray-100">
          <div className="card-body">
            <form onSubmit={handleSubmit(onSubmit)}>
            <div className="form-control">
