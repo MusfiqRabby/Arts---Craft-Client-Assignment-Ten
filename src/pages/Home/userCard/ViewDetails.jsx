@@ -19,7 +19,7 @@ const ViewDetails = () => {
             <div data-aos="flip-left" data-aos-duration="1500">
             <div className="lg:grid lg:grid-cols-2 lg:gap-10 lg:mb-5">
         <div className='w-full h-auto '>
-          <img  src={image} alt="" />
+          <img className='w-full h-[600px]' src={image} alt="" />
         </div>
         <div className='font-poppins'>
           <h1 className="text-5xl font-bold lg:mb-2 text-indigo-500 font-poppins">

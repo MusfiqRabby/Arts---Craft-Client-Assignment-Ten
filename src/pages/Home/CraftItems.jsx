@@ -8,7 +8,7 @@ const CraftItems = () => {
   
     return (
         <div>
-           <div className='mt-10 bg-amber-600 rounded-br-xl rounded-tl-xl p-3'>
+           <div className='my-10 bg-amber-600 rounded-br-xl rounded-tl-xl p-3'>
            <h2 className='text-center font-bold font-poppins text-3xl text-white'>Art & Craft Items </h2>
            </div>
          

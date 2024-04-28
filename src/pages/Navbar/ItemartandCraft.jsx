@@ -40,23 +40,20 @@ const ItemartandCraft = ({product, card, setCard}) => {
     }
 
     return (
-        <div>
-              <div data-aos="flip-left">
-             <div className="card card-side bg-base-200 shadow-xl  m-10 p-10 ">
-  <figure>
-    <img className='w-96 h-[350px] ' src={image} alt="Movie"/>
-    </figure>
+        <div data-aos="flip-left">
+   <div className="card card-side bg-gray-100 shadow-xl m-10">
+  <img className='w-96 h-[250px]' src={image} />
   <div className="card-body">
-    <h2 className="card-title font-poppins text-4xl text-[#154ae8]"> {item}</h2>
+    <h2 className="card-title font-poppins text-4xl text-[#154ae8]">{item}</h2>
     <div className='flex gap-2 text-2xl'>
     <p className=' font-bold font-poppins text-[#dc6539] '>Prices: <span >{price}</span></p>
-    <p className='font-poppins mr-50 font-bold text-[#15c7e8]'>Rating: <span>{rating}</span></p>
+    <p className='font-poppins mr-64 font-bold text-[#15c7e8]'>Rating: <span>{rating}</span></p>
     </div>
-    <div className='flex gap-1 text-lg text-[#1594e8]'>
-        <p className='font-poppins font-bold'> Customization : <span>{customization}</span></p>
-        <p className='font-poppins mr-36 font-bold '> StockStatus : <span>{stock}</span></p>
+    <div className='flex font-poppins font-bold'>
+    <p >Customization : <span>{customization}</span></p>
+    <p className='mr-64'>StockStatus : <span>{stock}</span></p>
     </div>
-    <div className="card-actions my-3 gap-8 ">
+    <div className="card-actions justify-end">
     <button 
     onClick={() => handleDelete(_id)}
     className="btn md:btn-md bg-[#76e815] lg:btn-lg">Delete</button>
@@ -65,8 +62,9 @@ const ItemartandCraft = ({product, card, setCard}) => {
     </Link>
     </div>
   </div>
-</div>
-        </div>
+    </div>
+
+
         </div>
     );
 };
