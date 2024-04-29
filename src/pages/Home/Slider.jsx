@@ -26,10 +26,10 @@ const Slider = () => {
               <div className="hero-overlay bg-opacity-50"></div>
               <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
-                  <h1 className="mb-5 text-5xl font-bold font-poppins">Discover Inspiring Art & Craft Ideas!"</h1>
+                  <h1 className="mb-5 text-5xl font-bold font-poppins">Discover Inspiring Art & Craft Ideas!</h1>
                   <p className="mb-5 font-poppins opacity-90"> could encompass a wide range of creative endeavors. From painting and sculpture to knitting and woodworking, the possibilities are endless.<br />
                   </p>
-                  <button className="btn btn-primary"> <Link to="/register">Register Now</Link> </button>
+                  <button className="btn btn-info text-white font-poppins"> Register Now </button>
                 </div>
               </div>
             </div>
@@ -42,10 +42,10 @@ const Slider = () => {
               <div className="hero-overlay bg-opacity-50"></div>
               <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
-                  <h1 className="mb-5 text-5xl font-bold font-poppins">Uncover Art & Craft Inspiration!"</h1>
+                  <h1 className="mb-5 text-5xl font-bold font-poppins">Uncover Art & Craft Inspiration!</h1>
                   <p className="mb-5 font-poppins opacity-90"> could encompass a wide range of creative endeavors. From painting and sculpture to knitting and woodworking, the possibilities are endless.<br />
                   </p>
-                  <button className="btn btn-primary"> <Link to="/register">Register Now</Link> </button>
+                  <button className="btn btn-success text-white font-poppins">Register Now</button>
                 </div>
               </div>
             </div>
@@ -59,10 +59,10 @@ const Slider = () => {
               <div className="hero-overlay bg-opacity-50"></div>
               <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
-                  <h1 className="mb-5 text-5xl font-bold font-poppins">Find inspiration in the intricate "</h1>
+                  <h1 className="mb-5 text-5xl font-bold font-poppins">Find inspiration in the intricate </h1>
                   <p className="mb-5 font-poppins opacity-90"> could encompass a wide range of creative endeavors. From painting and sculpture to knitting and woodworking, the possibilities are endless.<br />
                   </p>
-                  <button className="btn btn-primary"> <Link to="/register">Register Now</Link> </button>
+                  <button className="btn btn-error text-white font-poppins">Register Now</button>
                 </div>
               </div>
             </div>

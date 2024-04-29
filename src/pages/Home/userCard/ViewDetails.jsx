@@ -54,15 +54,9 @@ const ViewDetails = () => {
               <p className="font-bold mb-1">{stock}</p>
             </div>
           </div>
-       
         </div>
       </div>
-
-
         </div>
-
-
-
          </div>
     );
 };

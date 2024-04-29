@@ -22,6 +22,7 @@ import UpdatePage from "../pages/Navbar/UpdatePage/UpdatePage";
         {
           path: '/',
           element: <Home/>,
+           loader: () => fetch('http://localhost:5000/users')
         },
         {
             path: '/artcraftitme',
@@ -40,6 +41,7 @@ import UpdatePage from "../pages/Navbar/UpdatePage/UpdatePage";
               <ArtCraftList/>
             </PrivateRoute>
         },
+        
         {
             path: '/login',
             element: <Login/>

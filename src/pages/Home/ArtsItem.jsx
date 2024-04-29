@@ -1,16 +1,13 @@
-
-import { Helmet } from 'react-helmet-async';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const UserCard = ({user}) => {
+const ArtsItem = ({lok}) => {
 
-  const {_id, item, processing, image, subcategory, stock,} = user;
-  
+ const {_id, item, processing, image, subcategory, stock,} = lok;
+
     return (
-        <div data-aos="zoom-in">
-          <Helmet>
-            <title>Arts & Craft | All Arts & Craft</title>
-          </Helmet>
+        <div>
+    <div data-aos="zoom-in">
   <div className="card card-compact lg:w-96 bg-gray-200 shadow-xl">
    <figure><img className='w-full h-[230px]' src={image} /></figure>
     <div className="card-body">
@@ -26,7 +23,8 @@ const UserCard = ({user}) => {
     </div>
      </div>
      </div>
+        </div>
     );
 };
 
-export default UserCard;
+export default ArtsItem;

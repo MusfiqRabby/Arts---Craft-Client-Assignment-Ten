@@ -68,18 +68,18 @@ const AddCraft = () => {
 <div className="md:flex mb-4">
   <div className="form-control md:w-1/2">
  <label className="label">
- <span className="label-text">Item_Name</span>
+ <span className="label-text text-xl font-poppins font-bold">Item_Name</span>
    </label>
    <label className="input-group">
-  <input type="text" placeholder="item Name" name="item" className="input input-bordered w-full"/>
+  <input type="text" placeholder="item Name" required name="item" className="input input-bordered w-full"/>
     </label>
   </div>
   <div className="form-control md:w-1/2 ml-4">
  <label className="label">
- <span className="label-text">Subcategory_Name</span>
+ <span className="label-text text-xl font-poppins font-bold">Subcategory_Name</span>
    </label>
    <label className="input-group">
-  <input type="text" placeholder="Subcategory_Name" name="subcategory" className="input input-bordered w-full" />
+  <input type="text" placeholder="Subcategory_Name" required name="subcategory" className="input input-bordered w-full" />
     </label>
   </div>
   </div>
@@ -88,18 +88,18 @@ const AddCraft = () => {
 <div className="md:flex mb-4">
   <div className="form-control md:w-1/2">
  <label className="label">
- <span className="label-text">Short description</span>
+ <span className="label-text text-xl font-poppins font-bold">Short description</span>
    </label>
    <label className="input-group">
-  <input type="text" placeholder="short description" name="description" className="input input-bordered w-full"/>
+  <input type="text" placeholder="short description" required name="description" className="input input-bordered w-full"/>
     </label>
   </div>
   <div className="form-control md:w-1/2 ml-4">
  <label className="label">
- <span className="label-text">Use image URL</span>
+ <span className="label-text text-xl font-poppins font-bold">Use image URL</span>
    </label>
    <label className="input-group">
-  <input type="text" placeholder="use image URL" name="image" className="input input-bordered w-full" />
+  <input type="text" placeholder="use image URL" required name="image" className="input input-bordered w-full" />
     </label>
   </div>
   </div>
@@ -107,18 +107,18 @@ const AddCraft = () => {
 <div className="md:flex mb-4">
   <div className="form-control md:w-1/2">
  <label className="label">
- <span className="label-text">Price</span>
+ <span className="label-text text-xl font-poppins font-bold">Price</span>
    </label>
    <label className="input-group">
-  <input type="text" placeholder="Price" name="price" className="input input-bordered w-full"/>
+  <input type="text" placeholder="Price" name="price" required className="input input-bordered w-full"/>
     </label>
   </div>
   <div className="form-control md:w-1/2 ml-4">
  <label className="label">
- <span className="label-text">Rating</span>
+ <span className="label-text text-xl font-poppins font-bold">Rating</span>
    </label>
    <label className="input-group">
-  <input type="text" placeholder="Rating" name="rating" className="input input-bordered w-full" />
+  <input type="text" placeholder="Rating" required name="rating" className="input input-bordered w-full" />
     </label>
   </div>
   </div>
@@ -126,18 +126,18 @@ const AddCraft = () => {
 <div className="md:flex mb-4">
   <div className="form-control md:w-1/2">
  <label className="label">
- <span className="label-text">processing_time</span>
+ <span className="label-text text-xl font-poppins font-bold">processing_time</span>
    </label>
    <label className="input-group">
-  <input type="text" placeholder="processing_time" name="processing" className="input input-bordered w-full"/>
+  <input type="text" placeholder="processing_time" required name="processing" className="input input-bordered w-full"/>
     </label>
   </div>
   <div className="form-control md:w-1/2 ml-4">
  <label className="label">
- <span className="label-text">Customization</span>
+ <span className="label-text text-xl font-poppins font-bold">Customization</span>
    </label>
    <label className="input-group">
-  <input type="text" placeholder="customization" name="customization" className="input input-bordered w-full" />
+  <input type="text" placeholder="customization" required name="customization" className="input input-bordered w-full" />
     </label>
   </div>
   </div>
@@ -146,18 +146,18 @@ const AddCraft = () => {
 <div className="md:flex mb-4">
   <div className="form-control md:w-1/2">
  <label className="label">
- <span className="label-text">User Email</span>
+ <span className="label-text text-xl font-poppins font-bold">User Email</span>
    </label>
    <label className="input-group">
-  <input type="text" placeholder="User Email" name="email" className="input input-bordered w-full"/>
+  <input type="text" required placeholder="User Email" name="email" className="input input-bordered w-full"/>
     </label>
   </div>
   <div className="form-control md:w-1/2 ml-4">
  <label className="label">
- <span className="label-text">User Name</span>
+ <span className="label-text text-xl font-poppins font-bold">User Name</span>
    </label>
    <label className="input-group">
-  <input type="text" placeholder="User Name" name="name" className="input input-bordered w-full" />
+  <input type="text" placeholder="User Name" required name="name" className="input input-bordered w-full" />
     </label>
   </div>
   </div>
@@ -165,10 +165,10 @@ const AddCraft = () => {
 <div className="md:flex mb-4">
   <div className="form-control md:w-1/2">
  <label className="label">
- <span className="label-text">StockStatus</span>
+ <span className="label-text text-xl font-poppins font-bold">StockStatus</span>
    </label>
    <label className="input-group">
-  <input type="text" placeholder="StockStatus" name="stock" className="input input-bordered w-full"/>
+  <input type="text" placeholder="StockStatus" name="stock" required className="input input-bordered w-full"/>
     </label>
   </div>
   </div>
