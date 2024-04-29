@@ -1,25 +1,28 @@
-import { useLoaderData } from "react-router-dom";
-import AllArtCraft from "../Login/AllArtCraft";
+
 import { Helmet } from "react-helmet-async";
+import { useLoaderData } from "react-router-dom";
+import UserCard from "../Home/userCard/UserCard";
 
 const ArtCraftItem = () => {
    
-   const artcraft = useLoaderData()
+    const users = useLoaderData()
    
     return (
         <div>   
             <Helmet>
                 <title>Art & Craft | All Art & craft</title>
             </Helmet>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 my-10 m-5 ">
-                {
-                    artcraft.map(res => <AllArtCraft 
-                    key={res._id}
-                    res={res}>
-                    </AllArtCraft>)
+          
+         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-5'>   
+                   {
+                    users.map(user => <UserCard 
+                        key={user._id}
+                        user={user}
+                    >
+    
+                    </UserCard>)
                 }
-            </div>
-
+         </div>
 
         </div>
     );

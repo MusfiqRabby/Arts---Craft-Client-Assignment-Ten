@@ -22,12 +22,11 @@ import UpdatePage from "../pages/Navbar/UpdatePage/UpdatePage";
         {
           path: '/',
           element: <Home/>,
-          loader: () => fetch('http://localhost:5000/users')
         },
         {
             path: '/artcraftitme',
             element: <ArtCraftItem/>,
-            loader: () => fetch('http://localhost:5000/artcraft')
+            loader: () => fetch('http://localhost:5000/users')
         },
         {
             path: '/addcart',
