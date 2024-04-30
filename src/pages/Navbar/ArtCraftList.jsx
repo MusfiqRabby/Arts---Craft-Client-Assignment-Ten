@@ -13,7 +13,7 @@ const ArtCraftList = () => {
     const [card, setCard] = useState();
 
    useEffect(() =>{
-    fetch(`http://localhost:5000/artcraft/${user?.email}`)
+    fetch(` https://b9a10-server-side-musfiq-rabby.vercel.app/artcraft/${user?.email}`)
     .then(res => res.json())
     .then(data => {
         setItem(data);
@@ -26,6 +26,20 @@ const ArtCraftList = () => {
                 <title>Art & Craft | My Art & Craft List</title>
             </Helmet>
 
+        <div className='mb-10'>
+        <details className="dropdown">
+        <summary className="mx-10 btn px-20">Menu</summary>
+      <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-200 rounded-box w-52">
+      <li><a>Landscape Painting</a></li>
+      <li><a>Portrait Drawing</a></li>
+      <li><a>Watercolour Painting</a></li>
+      <li><a>Oil Painting</a></li>
+      <li><a>Charcoal Sketching</a></li>
+      <li><a>Cartoon Drawing</a></li>
+         </ul>
+        </details>
+        </div>
+      <div>
       {
         item.map(product => <ItemartandCraft
         key={product._id}
@@ -34,6 +48,7 @@ const ArtCraftList = () => {
         setCard={setItem}
         ></ItemartandCraft> )
         }
+      </div>
 
         </div>
     );

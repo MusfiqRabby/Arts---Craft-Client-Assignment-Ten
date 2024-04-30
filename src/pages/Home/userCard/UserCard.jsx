@@ -7,11 +7,12 @@ const UserCard = ({user}) => {
   const {_id, item, processing, image, subcategory, stock,} = user;
   
     return (
-        <div data-aos="zoom-in">
+        <div>
           <Helmet>
             <title>Arts & Craft | All Arts & Craft</title>
           </Helmet>
-  <div className="card card-compact lg:w-96 bg-gray-200 shadow-xl">
+
+   <div className="card card-compact lg:w-96 bg-gray-200 shadow-xl">
    <figure><img className='w-full h-[230px]' src={image} /></figure>
     <div className="card-body">
  <h2 className="card-title font-poppins">{item}</h2>
@@ -24,7 +25,7 @@ const UserCard = ({user}) => {
     </Link>
    </div>
     </div>
-     </div>
+     </div> 
      </div>
     );
 };

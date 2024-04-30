@@ -12,10 +12,9 @@ const PrivateRoute = ({children}) => {
         return <div className='text-center items-center'>
             <span className="loading loading-spinner loading-lg"></span>
         </div>
-        
     }
 
-    if(!user) {
+    if(user) {
         return <Navigate to='/login' state={location?.pathname || '/'} />
        }
    

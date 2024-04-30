@@ -15,7 +15,7 @@ const AddCraft = () => {
     const subcategory = form.subcategory.value;
     const description = form.description.value;
     const image = form.image.value;
-    const price = form.item.value;
+    const price = form.price.value;
     const rating = form.rating.value;
     const processing = form.processing.value;
     const customization = form.customization.value;
@@ -30,7 +30,7 @@ const AddCraft = () => {
 
 
     // send data to the server
-    fetch('http://localhost:5000/users', {
+    fetch(' https://b9a10-server-side-musfiq-rabby.vercel.app/users', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

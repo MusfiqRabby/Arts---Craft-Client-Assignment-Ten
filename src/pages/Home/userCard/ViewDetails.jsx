@@ -7,7 +7,7 @@ const ViewDetails = () => {
   const {_id, item, subcategory,description,image, price,rating, processing, customization, stock, name, email } = users;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${_id}`)
+    fetch(` https://b9a10-server-side-musfiq-rabby.vercel.app/users/${_id}`)
     .then(res => res.json())
     .then(data => {
       console.log(data)

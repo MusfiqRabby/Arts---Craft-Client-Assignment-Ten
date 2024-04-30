@@ -15,7 +15,7 @@ const UpdatePage = () => {
     const subcategory = form.subcategory.value;
     const description = form.description.value;
     const image = form.image.value;
-    const price = form.item.value;
+    const price = form.price.value;
     const rating = form.rating.value;
     const processing = form.processing.value;
     const customization = form.customization.value;
@@ -28,7 +28,7 @@ const UpdatePage = () => {
 
 
     // send data to the server
-    fetch(`http://localhost:5000/users/${_id}`, {
+    fetch(` https://b9a10-server-side-musfiq-rabby.vercel.app/users/${_id}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'

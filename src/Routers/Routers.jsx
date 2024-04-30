@@ -22,12 +22,12 @@ import UpdatePage from "../pages/Navbar/UpdatePage/UpdatePage";
         {
           path: '/',
           element: <Home/>,
-           loader: () => fetch('http://localhost:5000/users')
+           loader: () => fetch(' https://b9a10-server-side-musfiq-rabby.vercel.app/users')
         },
         {
             path: '/artcraftitme',
             element: <ArtCraftItem/>,
-            loader: () => fetch('http://localhost:5000/users')
+            loader: () => fetch(' https://b9a10-server-side-musfiq-rabby.vercel.app/users')
         },
         {
             path: '/addcart',
@@ -59,14 +59,14 @@ import UpdatePage from "../pages/Navbar/UpdatePage/UpdatePage";
             element:  <PrivateRoute>
               <ViewDetails/>
             </PrivateRoute>,
-           loader: ({params}) => fetch(`http://localhost:5000/users/${params.id}`)
+           loader: ({params}) => fetch(` https://b9a10-server-side-musfiq-rabby.vercel.app/users/${params.id}`)
         },
         {
           path: '/updatepage/:id',
           element: <PrivateRoute>
             <UpdatePage/>
           </PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/users/${params.id}`)
+          loader: ({params}) => fetch(` https://b9a10-server-side-musfiq-rabby.vercel.app/users/${params.id}`)
         }
       ],
     },
